@@ -1,0 +1,17 @@
+Inicio de proyecto(Como lo estructuramos)
+En este proyecto seguimos practicando LazyLoad, en breve pongo un resumen para poder llevarlo acabo:
+1.- Crear carpeta donde tendremos todo lo relacionado a ella, en este caso se llama "paises", esta carpeta tendra su propio modulo, rutas,
+interfaces, paginas, servicios, etc.
+2.- Crear modulo en la carpeta a utilizar, el comando que ya incluye el archivo de rutas es "ng g m paises --routing"
+Esto deberia crear los dos archivos en la carpeta "paises"
+3.- Crear todos los componentes que seran paginas, en este caso "ng g c paises/pages/selectorPage --skipTests"
+--skipTests por que no quiero el archivo de pruebas, esto ademas de crear el componente "selectorPages" en la ruta que le
+estamos indicando, tambien actualiza el archivo "paises.module", alli lo incluye como (declaration).
+4.- Para crear un servicio se usa el comando "ng g s paises/services/paises --skipTests"
+Esto me crea un servicio en la ruta indicada con el nombre "paises.service.ts", el servicio no se importa en ningun lugar
+5.- Crear rutas en nuestro nuevo modulo "paises-routing.module.ts". Aqui como es nuestro modulo independiente y no es el 
+principal, se utiliza dentro de routes "path" y "children"
+6.- Para la carga perezosa "lazyLoad" es en el archivo de rutas principal "app-routing.module.ts", dentro de routes es parecido
+pero usamos "path" y "loadChildren" con su funcion que hace el import a la ruta con el "module" y es una promesa que nos responde
+el module. Aqui podemos hacer el "path: "**"" con la redirecTo: "donde queramos"
+7.- Pot ultimo utilizamos el "router-outlet" en el HTML para poder llamar las rutas
