@@ -1,1 +1,44 @@
-<p>selector-pages works!</p>
+<h1 class="mt-4">Selectores aninados</h1>
+<hr>
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+
+    <!-- SELECTOR DE REGIONES -->
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Continente:</label>
+            <select class="form-control"
+                    formControlName="region">
+                <option value=""> Seleccione continente</option>
+                <option *ngFor="let item of regiones"
+                        [value]="item | lowercase"> {{item}} </option>
+            </select>
+        </div>
+    </div>
+
+    <!-- SELECTOR DE PAISES -->
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">País:</label>
+            <select class="form-control"
+                    formControlName="pais">
+                <option value=""> Seleccione país</option>
+                <option *ngFor="let item of paises"
+                        [value]="item.alpha3Code"> {{item.name}} </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end"
+                    type="submit">
+                Enviar
+            </button>
+        </div>
+    </div>
+</form>
+
+<h3>Formulario</h3>
+<pre>Valid: {{miFormulario.valid}} </pre>
+<pre>Value: {{miFormulario.value | json}} </pre>
