@@ -15,3 +15,8 @@ principal, se utiliza dentro de routes "path" y "children"
 pero usamos "path" y "loadChildren" con su funcion que hace el import a la ruta con el "module" y es una promesa que nos responde
 el module. Aqui podemos hacer el "path: "**"" con la redirecTo: "donde queramos"
 7.- Pot ultimo utilizamos el "router-outlet" en el HTML para poder llamar las rutas
+
+MATERIAL UTILIZADO PARA ENDPOINTS:
+Algunas Urls se tuvieron que modificar por que como marca la pagina no regresaba una respuesta, en el programa estan los enlaces correctos
+De la pagina "https://restcountries.com/#api-endpoints-v3-code" se sacaron algunas URL´s de la seccion "Continent"...  , las cuales se utilizaron para obtener una respuesta
+y crear servicios e interfaces con la misma estructura, se utilizo "https://app.quicktype.io/" para convertir el JSON que da POSTMAN a interfaces.
